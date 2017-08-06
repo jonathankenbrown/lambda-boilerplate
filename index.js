@@ -9,7 +9,7 @@ exports.handler = (event, context, callback) => {
           })
         : JSON.stringify({
             type: "success",
-            sucess
+            success
           }),
       headers: {
         "Content-Type": "application/json"
