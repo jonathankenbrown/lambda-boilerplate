@@ -27,7 +27,7 @@ const util = require("util");
 // let host = process.env.dbHost;
 
 exports.handler = (event, context, callback) => {
-  const done = (err, success) => {
+  const done = (err, response) => {
       // return the required callback function
     callback(null, {
       statusCode: err ? "400" : "200",
@@ -38,7 +38,7 @@ exports.handler = (event, context, callback) => {
           })
         : JSON.stringify({
             type: "success",
-            success
+            response
           }),
       headers: {
         "Content-Type": "application/json"
