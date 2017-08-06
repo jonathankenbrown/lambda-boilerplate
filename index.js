@@ -49,7 +49,7 @@ exports.handler = (event, context, callback) => {
   );
 
   try {
-    done(null, "you got an success");
+    done(null, "Much success!! Very API!!");
   } catch (error) {
     done(error);
   }
