@@ -1,3 +1,9 @@
+/***********************************************************************************
+AWS Lambda boilerplate for API functions
+This boilerplate is designed to be used with AWS API gateway and to return information
+to a client
+***********************************************************************************/
+
 const util = require("util");
 
 // - provide access to aws-sdk
@@ -22,6 +28,7 @@ const util = require("util");
 
 exports.handler = (event, context, callback) => {
   const done = (err, success) => {
+      // return the required callback function
     callback(null, {
       statusCode: err ? "400" : "200",
       body: err
@@ -48,6 +55,7 @@ exports.handler = (event, context, callback) => {
     util.inspect(event, { showHidden: false, depth: null })
   );
 
+  // try to do some stuff
   try {
     done(null, "Much success!! Very API!!");
   } catch (error) {
