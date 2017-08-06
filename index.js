@@ -1,31 +1,28 @@
 exports.handler = (event, context, callback) => {
   const done = (err, success) => {
-    if (err) {
-      callback(
-        null,
-        JSON.stringify({
-          type: "error",
-          msg: "Failure from Lambda",
-          err: err
-        })
-      );
-    } else {
-      callback(
-        null,
-        JSON.stringify({
-          type: "success",
-          msg: "Hello from Lambda"
-        })
-      );
-    }
+    callback(null, {
+      statusCode: err ? "400" : "200",
+      body: err
+        ? JSON.stringify({
+            type: "error",
+            err
+          })
+        : JSON.stringify({
+            type: "success",
+            sucess
+          }),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    });
   };
 
   /****
    * Enter here
    */
   try {
-        done(null, "you got an success");
+    done(null, "you got an success");
   } catch (error) {
-        done(error);
+    done(error);
   }
 };
