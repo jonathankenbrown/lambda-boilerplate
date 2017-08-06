@@ -6,7 +6,7 @@ const util = require("util");
 // - provide access to mysql databases
 // const mysql = require('mysql');
 
-// not sure what this is for
+// - unmarshal a DynamodDB item to standard JSON
 // const parse = AWS.DynamoDB.Converter.output;
 
 // - used to create unique IDs. requires installation of uuid npm package
