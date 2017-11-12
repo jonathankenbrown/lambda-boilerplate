@@ -59,6 +59,7 @@ exports.handler = (event, context, callback) => {
   try {
     done(null, "Much success!! Very API!!");
   } catch (error) {
+      console.log(error);
     done(error);
   }
 };
